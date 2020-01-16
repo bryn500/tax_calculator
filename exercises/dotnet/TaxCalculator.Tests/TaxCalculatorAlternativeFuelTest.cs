@@ -11,7 +11,7 @@ namespace TaxCalculator.Tests
         [SetUp]
         public void BeforeEach()
         {
-            _taxCalculator = new AltTaxCalculator();
+            _taxCalculator = new TaxCalculator2020();
         }
 
         [Test]

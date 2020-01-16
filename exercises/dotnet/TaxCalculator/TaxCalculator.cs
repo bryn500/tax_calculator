@@ -6,16 +6,21 @@ namespace TaxCalculator
     {
         protected int Year { get; }
 
+        protected bool UseFirstYearFeature { get; }
+        protected bool UseExpensiveCarFeature { get; }
+
         public abstract int CalculateTax(Vehicle vehicle);
 
-        protected TaxCalculator() : this(DateTime.Now.Year)
+        protected TaxCalculator(bool useFirstYearFeature, bool useExpensiveCarFeature) : this(DateTime.Now.Year, useFirstYearFeature, useExpensiveCarFeature)
         {
 
         }
 
-        protected TaxCalculator(int year)
+        protected TaxCalculator(int year, bool useFirstYearFeature, bool useExpensiveCarFeature)
         {
             Year = year;
+            UseFirstYearFeature = useFirstYearFeature;
+            UseExpensiveCarFeature = useExpensiveCarFeature;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace TaxCalculator.Tests
         [SetUp]
         public void BeforeEach()
         {
-            _taxCalculator = new DieselTaxCalculator();
+            _taxCalculator = new TaxCalculator2020();
         }
 
         [Test]
