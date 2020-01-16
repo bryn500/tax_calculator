@@ -39,11 +39,17 @@ namespace TaxCalculator
 
         private int CalculateTaxForPetrol(Vehicle vehicle)
         {
+            if (UseExpensiveCarFeature)
+            {
+                if (vehicle.ListPrice > 40000)
+                    return 450;
+            }
+
             if (UseFirstYearFeature)
             {
                 if (vehicle.DateOfFirstRegistration.Year <= Year - 2)
                     return 140;
-            }            
+            }
 
             if (vehicle.Co2Emissions == 0)
             {
@@ -101,6 +107,12 @@ namespace TaxCalculator
 
         private int CalculateTaxForDiesel(Vehicle vehicle)
         {
+            if (UseExpensiveCarFeature)
+            {
+                if (vehicle.ListPrice > 40000)
+                    return 450;
+            }
+
             if (UseFirstYearFeature)
             {
                 if (vehicle.DateOfFirstRegistration.Year <= Year - 2)
@@ -163,6 +175,12 @@ namespace TaxCalculator
 
         private int CalculateTaxForAlt(Vehicle vehicle)
         {
+            if (UseExpensiveCarFeature)
+            {
+                if (vehicle.ListPrice > 40000)
+                    return 440;
+            }
+
             if (UseFirstYearFeature)
             {
                 if (vehicle.DateOfFirstRegistration.Year <= Year - 2)
@@ -225,6 +243,12 @@ namespace TaxCalculator
 
         private int CalculateTaxForElectric(Vehicle vehicle)
         {
+            if (UseExpensiveCarFeature)
+            {
+                if (vehicle.ListPrice > 40000)
+                    return 310;
+            }
+
             return 0;
         }
     }
